@@ -95,15 +95,9 @@ const hardCodedProjects: ProjectCardProps[] = [
   },
 ];
 
-const EXCLUDED_REPOS = new Set([
-  "portfolio-website",
-  "Celestial-App",
-  "IDS_System_AWS",
-  "Machine-Learning-Pipeline-SageMaker",
-  "Dune-Card-Game",
-  "Poe-trade",
-  ...hardCodedProjects.map((p) => p.name),
-]);
+const CUSTOM_PROJECTS = new Map(
+  hardCodedProjects.map((p) => [p.name, p])
+);
 
 export default function AllProjects() {
   const [dynamicProjects, setDynamicProjects] = useState<ProjectCardProps[]>([]);
@@ -113,20 +107,38 @@ export default function AllProjects() {
   useEffect(() => {
     async function fetchRepos() {
       try {
-        const res = await fetch(
-          "https://api.github.com/users/Daazd/repos?per_page=100&sort=updated"
-        );
-        if (!res.ok) throw new Error("Failed to fetch");
-        const repos: GitHubRepo[] = await res.json();
+        const allRepos: GitHubRepo[] = [];
+        let page = 1;
+        let hasMore = true;
 
-        const newProjects = repos
-          .filter((r) => !r.fork && !EXCLUDED_REPOS.has(r.name))
-          .map((r) => ({
-            name: r.name,
-            description: r.description || `A ${r.language || "code"} project by Taylor Allen.`,
-            techTags: r.language ? [r.language, ...r.topics.slice(0, 3)] : r.topics.slice(0, 4),
-            githubUrl: r.html_url,
-          }));
+        while (hasMore) {
+          const res = await fetch(
+            `https://api.github.com/users/Daazd/repos?per_page=100&sort=updated&page=${page}`
+          );
+          if (!res.ok) throw new Error("Failed to fetch");
+          const repos: GitHubRepo[] = await res.json();
+          allRepos.push(...repos);
+          hasMore = repos.length === 100;
+          page += 1;
+        }
+
+        const newProjects = allRepos
+          .filter((r) => !r.fork && r.name !== "portfolio-website")
+          .map((r) => {
+            const custom = CUSTOM_PROJECTS.get(r.name);
+            if (custom) {
+              return custom;
+            }
+            return {
+              name: r.name,
+              description:
+                r.description || `A ${r.language || "code"} project by Taylor Allen.`,
+              techTags: r.language
+                ? [r.language, ...r.topics.slice(0, 3)]
+                : r.topics.slice(0, 4),
+              githubUrl: r.html_url,
+            };
+          });
 
         setDynamicProjects(newProjects);
       } catch {
@@ -139,7 +151,7 @@ export default function AllProjects() {
     fetchRepos();
   }, []);
 
-  const allProjects = [...hardCodedProjects, ...dynamicProjects];
+  const allProjects = dynamicProjects;
 
   return (
     <section id="projects" className="bg-[var(--bg-deep)] py-24 md:py-28">
