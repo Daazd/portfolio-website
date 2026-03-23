@@ -3,8 +3,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Daazd | Full-Stack Developer & Cloud Engineer",
-  description: "Portfolio of Daazd — Full-Stack Developer & Cloud Engineer specializing in cloud architecture, machine learning, and web development.",
+  title: "Taylor Allen | Full-Stack Developer & Cloud Engineer",
+  description: "Portfolio of Taylor Allen — Full-Stack Developer & Cloud Engineer specializing in cloud architecture, machine learning, and web development.",
 };
 
 export default function RootLayout({
