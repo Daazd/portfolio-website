@@ -10,9 +10,9 @@ export default function Hero() {
       />
 
       <div className="relative section-container py-28 md:py-36 lg:py-40">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-10 lg:items-center">
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-14 lg:items-center">
           <div className="lg:col-span-7">
-            <div className="reveal font-mono-label text-[11px] uppercase tracking-[0.35em] text-[var(--text-muted)] mb-6">
+            <div className="reveal font-mono-label text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-6">
               Signal / portfolio
             </div>
 
@@ -20,7 +20,7 @@ export default function Hero() {
               Hi — I&apos;m
             </p>
 
-            <h1 className="reveal reveal-delay-2 font-display text-5xl sm:text-6xl md:text-7xl lg:text-[4.5rem] leading-[0.95] tracking-tight mb-6">
+            <h1 className="reveal reveal-delay-2 font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] leading-[1.1] tracking-normal mb-6">
               <span className="gradient-text not-italic">Taylor Allen</span>
             </h1>
 
@@ -30,7 +30,7 @@ export default function Hero() {
               Full-Stack Developer &amp; Cloud Engineer
             </h2>
 
-            <p className="reveal reveal-delay-3 text-[var(--text-muted)] text-base md:text-lg leading-relaxed max-w-xl mb-10">
+            <p className="reveal reveal-delay-3 text-[var(--text-muted)] text-base md:text-lg leading-loose max-w-xl mb-10">
               I design and ship production systems: AWS and Kubernetes, SageMaker ML pipelines,
               Terraform-backed infrastructure, and polished React surfaces. One thread from idea to
               running workload.
@@ -83,12 +83,14 @@ export default function Hero() {
                   { k: "01", t: "Cloud & IaC", d: "Terraform-first AWS: Lambda, Step Functions, ECR, SageMaker, and the glue between them." },
                   { k: "02", t: "ML in production", d: "Training and deployment paths that survive real traffic — not notebook demos." },
                   { k: "03", t: "Product surfaces", d: "React / Next.js UIs with attention to states, performance, and clarity." },
+                  { k: "04", t: "CI/CD & pipelines", d: "Automated testing, deployment, and release workflows that keep shipping predictable." },
+                  { k: "05", t: "Observability & ops", d: "Logging, metrics, and tracing so production issues get found and fixed fast." },
                 ].map((item) => (
                   <li key={item.k} className="flex gap-4">
                     <span className="font-mono-label shrink-0 text-sm text-[var(--accent)]">{item.k}</span>
                     <div>
                       <p className="font-semibold text-[var(--text)]">{item.t}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-[var(--text-muted)]">{item.d}</p>
+                      <p className="mt-1.5 text-sm leading-loose text-[var(--text-muted)]">{item.d}</p>
                     </div>
                   </li>
                 ))}

@@ -33,6 +33,7 @@ body {
   background-color: var(--bg-deep);
   color: var(--text);
   font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: 0.01em;
 }
 
 /* Film grain — breaks flat “template” feel without heavy assets */
@@ -77,6 +78,7 @@ body::before {
 
 .font-display {
   font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-feature-settings: "liga" 1, "kern" 1;
 }
 
 .font-mono-label {
