@@ -32,8 +32,11 @@ export default function Hero() {
 
             <p className="reveal reveal-delay-3 text-[var(--text-muted)] text-base md:text-lg leading-loose max-w-xl mb-10">
               I design and ship production systems: AWS and Kubernetes, SageMaker ML pipelines,
-              Terraform-backed infrastructure, and polished React surfaces. One thread from idea to
-              running workload.
+              Terraform-backed infrastructure, and polished React surfaces. I&apos;m fluent in{" "}
+              <span className="text-[var(--text)] font-medium">agent orchestration</span> — building
+              pipelines, composing new agents, and wiring{" "}
+              <span className="text-[var(--text)] font-medium">agentic flows</span> end to end. One
+              thread from idea to running workload.
             </p>
 
             <div className="reveal reveal-delay-4 flex flex-wrap gap-3 mb-10">
@@ -85,6 +88,11 @@ export default function Hero() {
                   { k: "03", t: "Product surfaces", d: "React / Next.js UIs with attention to states, performance, and clarity." },
                   { k: "04", t: "CI/CD & pipelines", d: "Automated testing, deployment, and release workflows that keep shipping predictable." },
                   { k: "05", t: "Observability & ops", d: "Logging, metrics, and tracing so production issues get found and fixed fast." },
+                  {
+                    k: "06",
+                    t: "Agent orchestration & agentic flows",
+                    d: "Fluent in orchestrating agents, pipelining work across steps, and standing up new agents with clear contracts, guardrails, and handoffs — not one-off prompts.",
+                  },
                 ].map((item) => (
                   <li key={item.k} className="flex gap-4">
                     <span className="font-mono-label shrink-0 text-sm text-[var(--accent)]">{item.k}</span>

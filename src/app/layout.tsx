@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Taylor Allen | Full-Stack Developer & Cloud Engineer",
   description:
-    "Portfolio of Taylor Allen — cloud architecture, ML pipelines, and full-stack delivery. AWS, SageMaker, React, and production systems.",
+    "Portfolio of Taylor Allen — cloud architecture, ML pipelines, agent orchestration and agentic flows, and full-stack delivery. AWS, SageMaker, React, and production systems.",
 };
 
 export default function RootLayout({

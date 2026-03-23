@@ -18,8 +18,11 @@ export default function Now() {
           <div className="max-w-2xl flex-1 space-y-5 text-[var(--text-muted)] leading-relaxed">
             <p>
               Sharpening repeatable patterns for ML pipelines on AWS (SageMaker, Step Functions,
-              containerized training) and keeping frontends fast enough that infrastructure work
-              doesn&apos;t feel like a different universe from the UI.
+              containerized training), doubling down on{" "}
+              <span className="text-[var(--text)] font-medium">agentic flows</span> — orchestration,
+              pipelining, and new agents with predictable behavior — and keeping frontends fast
+              enough that infrastructure work doesn&apos;t feel like a different universe from the
+              UI.
             </p>
             <p className="border-l-2 border-[var(--accent-2)]/60 pl-5 text-[var(--text)]">
               If you&apos;re hiring for cloud + product engineering and want someone who can own a
