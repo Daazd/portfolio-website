@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <span className="text-xl font-bold gradient-text">Daazd</span>
+            <span className="text-xl font-bold gradient-text">Taylor Allen</span>
             <span className="text-slate-500 text-sm">Full-Stack Developer &amp; Cloud Engineer</span>
           </div>
 
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           <p className="text-slate-600 text-sm">
-            © 2026 Daazd. All rights reserved.
+            © 2026 Taylor Allen. All rights reserved.
           </p>
         </div>
       </div>

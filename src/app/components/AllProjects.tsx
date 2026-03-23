@@ -123,7 +123,7 @@ export default function AllProjects() {
           .filter((r) => !r.fork && !EXCLUDED_REPOS.has(r.name))
           .map((r) => ({
             name: r.name,
-            description: r.description || `A ${r.language || "code"} project by Daazd.`,
+            description: r.description || `A ${r.language || "code"} project by Taylor Allen.`,
             techTags: r.language ? [r.language, ...r.topics.slice(0, 3)] : r.topics.slice(0, 4),
             githubUrl: r.html_url,
           }));

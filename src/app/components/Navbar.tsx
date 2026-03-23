@@ -35,7 +35,7 @@ export default function Navbar() {
             href="#about"
             className="text-xl font-bold gradient-text hover:opacity-80 transition-opacity"
           >
-            Daazd
+            Taylor Allen
           </a>
 
           {/* Desktop Nav */}
