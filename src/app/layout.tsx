@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-[#0a0a0f] text-slate-200" style={{ fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>
+      <body className="bg-[#0a0a0f] text-slate-200">
         <Navbar />
         {children}
       </body>

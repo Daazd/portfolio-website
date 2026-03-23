@@ -8,7 +8,7 @@ A modern portfolio website built with Next.js, TypeScript, and Tailwind CSS, dep
 
 ## Tech Stack
 
-- **Next.js 14** — App Router, static export
+- **Next.js 16** — App Router, static export
 - **TypeScript** — Full type safety
 - **Tailwind CSS** — Utility-first styling
 - **GitHub Pages** — Static hosting
