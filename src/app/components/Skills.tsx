@@ -1,70 +1,81 @@
 const skillCategories = [
   {
     title: "Languages",
-    icon: "💻",
     skills: ["Python", "TypeScript", "JavaScript", "HTML/CSS"],
   },
   {
     title: "Frontend",
-    icon: "🎨",
     skills: ["React", "Next.js", "Vite", "Three.js", "Tailwind CSS", "MUI", "Chakra UI"],
   },
   {
     title: "Backend",
-    icon: "⚙️",
     skills: ["Node.js", "Express", "Django", "Flask", "Sequelize", "MongoDB"],
   },
   {
     title: "Cloud & DevOps",
-    icon: "☁️",
     skills: [
-      "AWS SageMaker", "ECR", "S3", "Lambda", "Step Functions",
-      "Elastic Beanstalk", "SNS", "DynamoDB", "Terraform", "Docker",
-      "Kubernetes", "GitHub Actions", "Grafana",
+      "AWS SageMaker",
+      "ECR",
+      "S3",
+      "Lambda",
+      "Step Functions",
+      "Elastic Beanstalk",
+      "SNS",
+      "DynamoDB",
+      "Terraform",
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "Grafana",
     ],
   },
   {
-    title: "ML / Data Science",
-    icon: "🤖",
+    title: "ML / Data",
     skills: ["scikit-learn", "pandas", "numpy", "SageMaker"],
   },
   {
     title: "Other",
-    icon: "🛠️",
     skills: ["Electron", "Git", "Linux"],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[#0d1117]">
+    <section id="skills" className="bg-[var(--bg-deep)] py-24 md:py-28">
       <div className="section-container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">Tech Stack</span>
+        <div className="mb-16 max-w-2xl">
+          <p className="font-mono-label mb-3 text-[11px] uppercase tracking-[0.35em] text-[var(--accent-2)]">
+            Capabilities
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl text-[var(--text)]">
+            <span className="gradient-text">Stack &amp; tooling</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Technologies I use to build scalable, production-ready applications
+          <p className="mt-4 text-lg text-[var(--text-muted)]">
+            What I reach for when the goal is reliability, clarity, and speed in production — not
+            resume keyword stuffing.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category) => (
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {skillCategories.map((category, i) => (
             <div
               key={category.title}
-              className="p-6 rounded-2xl bg-[#0a0a0f] border border-slate-800 hover:border-cyan-500/30 transition-all duration-300 group"
+              className="group rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 transition hover:border-[var(--accent-2)]/35 hover:shadow-[0_0_0_1px_rgba(139,124,247,0.12)] md:p-7"
+              style={{ animationDelay: `${i * 40}ms` }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl">{category.icon}</span>
-                <h3 className="text-lg font-semibold text-slate-200 group-hover:text-cyan-400 transition-colors">
+              <div className="mb-5 flex items-baseline justify-between gap-3">
+                <h3 className="text-lg font-semibold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
                   {category.title}
                 </h3>
+                <span className="font-mono-label text-[10px] uppercase tracking-wider text-[var(--text-muted)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 rounded-lg bg-slate-800/50 text-slate-400 text-sm font-medium hover:bg-cyan-500/10 hover:text-cyan-400 transition-all duration-200 cursor-default"
+                    className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3 py-1.5 text-sm text-[var(--text-muted)] transition group-hover:border-[var(--border-subtle)] hover:border-[var(--accent)]/30 hover:text-[var(--text)]"
                   >
                     {skill}
                   </span>

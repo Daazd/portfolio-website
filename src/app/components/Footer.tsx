@@ -1,40 +1,68 @@
 export default function Footer() {
   return (
-    <footer className="py-12 bg-[#0a0a0f] border-t border-slate-800">
+    <footer className="border-t border-[var(--border-subtle)] bg-[var(--bg-deep)] py-16">
       <div className="section-container">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col items-center md:items-start gap-1">
-            <span className="text-xl font-bold gradient-text">Taylor Allen</span>
-            <span className="text-slate-500 text-sm">Full-Stack Developer &amp; Cloud Engineer</span>
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <span className="font-display text-2xl gradient-text">Taylor Allen</span>
+            <p className="mt-2 max-w-sm text-sm text-[var(--text-muted)]">
+              Full-stack and cloud engineering — shipping systems that hold up after launch.
+            </p>
           </div>
 
-          <div className="flex items-center gap-6">
-            <a
-              href="https://github.com/Daazd"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors text-sm font-medium"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-              </svg>
-              GitHub Profile
-            </a>
-
-            <a
-              href="https://nextjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-slate-200 text-sm transition-colors"
-            >
-              Built with Next.js
-            </a>
+          <div className="flex flex-wrap gap-10">
+            <div>
+              <p className="font-mono-label mb-3 text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)]">
+                Connect
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://github.com/Daazd"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="focus-ring text-[var(--text)] underline-offset-4 hover:text-[var(--accent)] hover:underline"
+                  >
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href="#featured" className="focus-ring text-[var(--text-muted)] hover:text-[var(--accent)]">
+                    Featured work
+                  </a>
+                </li>
+                <li>
+                  <a href="#now" className="focus-ring text-[var(--text-muted)] hover:text-[var(--accent)]">
+                    Now
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-mono-label mb-3 text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)]">
+                Colophon
+              </p>
+              <p className="max-w-xs text-sm text-[var(--text-muted)]">
+                Built with{" "}
+                <a
+                  href="https://nextjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--text)] underline-offset-2 hover:underline"
+                >
+                  Next.js
+                </a>
+                , Tailwind CSS v4, and static export for GitHub Pages.
+              </p>
+            </div>
           </div>
-
-          <p className="text-slate-600 text-sm">
-            © 2026 Taylor Allen. All rights reserved.
-          </p>
         </div>
+
+        <div className="signal-line mt-12 max-w-full" />
+
+        <p className="mt-8 text-center text-sm text-[var(--text-muted)] md:text-left">
+          © {new Date().getFullYear()} Taylor Allen. All rights reserved.
+        </p>
       </div>
     </footer>
   );

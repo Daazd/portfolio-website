@@ -142,38 +142,41 @@ export default function AllProjects() {
   const allProjects = [...hardCodedProjects, ...dynamicProjects];
 
   return (
-    <section id="projects" className="py-24 bg-[#0d1117]">
+    <section id="projects" className="bg-[var(--bg-deep)] py-24 md:py-28">
       <div className="section-container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="gradient-text">All Projects</span>
+        <div className="mb-14 text-center">
+          <p className="font-mono-label mb-3 text-[11px] uppercase tracking-[0.35em] text-[var(--accent-2)]">
+            Repository index
+          </p>
+          <h2 className="font-display mb-4 text-4xl md:text-5xl text-[var(--text)]">
+            <span className="gradient-text">All projects</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Complete collection of repositories — from experiments to production apps
+          <p className="mx-auto max-w-2xl text-lg text-[var(--text-muted)]">
+            Curated list plus live GitHub — experiments, tooling, and production code in one place.
           </p>
         </div>
 
         {loading && (
-          <div className="flex justify-center items-center py-12">
-            <div className="w-8 h-8 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin" />
-            <span className="ml-3 text-slate-400">Loading additional repositories...</span>
+          <div className="flex items-center justify-center py-12">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-[var(--accent)] border-t-transparent" />
+            <span className="ml-3 text-[var(--text-muted)]">Loading additional repositories…</span>
           </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {allProjects.map((project) => (
             <ProjectCard key={project.name} {...project} featured={false} />
           ))}
         </div>
 
         {!loading && dynamicProjects.length > 0 && (
-          <p className="text-center text-slate-600 text-sm mt-8">
-            Showing {allProjects.length} repositories — dynamically loaded from GitHub API
+          <p className="mt-8 text-center font-mono-label text-xs text-[var(--text-muted)]">
+            Showing {allProjects.length} repositories — merged with the GitHub API
           </p>
         )}
 
         {error && (
-          <p className="text-center text-slate-600 text-sm mt-8">
+          <p className="mt-8 text-center text-sm text-[var(--text-muted)]">
             Showing curated repositories — live GitHub API unavailable
           </p>
         )}
