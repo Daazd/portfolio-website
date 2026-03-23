@@ -154,16 +154,16 @@ export default function AllProjects() {
   const allProjects = dynamicProjects;
 
   return (
-    <section id="projects" className="bg-[var(--bg-deep)] py-24 md:py-28">
+    <section id="projects" className="bg-[var(--bg-deep)] py-28 md:py-32">
       <div className="section-container">
-        <div className="mb-14 text-center">
+        <div className="mb-16 text-center">
           <p className="font-mono-label mb-3 text-[11px] uppercase tracking-[0.35em] text-[var(--accent-2)]">
             Repository index
           </p>
           <h2 className="font-display mb-4 text-4xl md:text-5xl text-[var(--text)]">
             <span className="gradient-text">All projects</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-[var(--text-muted)]">
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[var(--text-muted)]">
             Curated list plus live GitHub — experiments, tooling, and production code in one place.
           </p>
         </div>
@@ -175,7 +175,7 @@ export default function AllProjects() {
           </div>
         )}
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-6">
           {allProjects.map((project) => (
             <ProjectCard key={project.name} {...project} featured={false} />
           ))}

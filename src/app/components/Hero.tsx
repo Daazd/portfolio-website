@@ -9,8 +9,8 @@ export default function Hero() {
         aria-hidden
       />
 
-      <div className="relative section-container py-28 md:py-36 lg:py-40">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-14 lg:items-center">
+      <div className="relative section-container py-32 md:py-40 lg:py-48">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-20 lg:items-center">
           <div className="lg:col-span-7">
             <div className="reveal font-mono-label text-xs uppercase tracking-[0.2em] text-[var(--text-muted)] mb-6">
               Signal / portfolio
@@ -26,11 +26,11 @@ export default function Hero() {
 
             <div className="reveal reveal-delay-2 signal-line max-w-md mb-8" />
 
-            <h2 className="reveal reveal-delay-3 text-xl md:text-2xl font-semibold text-[var(--text)] mb-6 max-w-xl">
+            <h2 className="reveal reveal-delay-3 text-xl md:text-2xl font-semibold text-[var(--text)] mb-6 max-w-2xl">
               Full-Stack Developer &amp; Cloud Engineer
             </h2>
 
-            <p className="reveal reveal-delay-3 text-[var(--text-muted)] text-base md:text-lg leading-loose max-w-xl mb-10">
+            <p className="reveal reveal-delay-3 text-[var(--text-muted)] text-base md:text-lg leading-loose max-w-2xl mb-12">
               I design and ship production systems: AWS and Kubernetes, SageMaker ML pipelines,
               Terraform-backed infrastructure, and polished React surfaces. I&apos;m fluent in{" "}
               <span className="text-[var(--text)] font-medium">agent orchestration</span> — building
@@ -39,7 +39,7 @@ export default function Hero() {
               thread from idea to running workload.
             </p>
 
-            <div className="reveal reveal-delay-4 flex flex-wrap gap-3 mb-10">
+            <div className="reveal reveal-delay-4 flex flex-wrap gap-4 mb-12">
               <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border-accent)] bg-[var(--accent-dim)] px-4 py-2 text-sm font-medium text-[var(--accent)]">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-40" />
@@ -77,11 +77,11 @@ export default function Hero() {
             className="reveal reveal-delay-2 lg:col-span-5 lg:col-start-8"
             aria-label="Highlights"
           >
-            <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]/80 p-6 md:p-8 backdrop-blur-md">
-              <p className="font-mono-label mb-6 text-[11px] uppercase tracking-[0.25em] text-[var(--accent-2)]">
+            <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]/80 p-7 md:p-9 backdrop-blur-md">
+              <p className="font-mono-label mb-7 text-[11px] uppercase tracking-[0.25em] text-[var(--accent-2)]">
                 Field notes
               </p>
-              <ul className="space-y-6">
+              <ul className="space-y-7">
                 {[
                   { k: "01", t: "Cloud & IaC", d: "Terraform-first AWS: Lambda, Step Functions, ECR, SageMaker, and the glue between them." },
                   { k: "02", t: "ML in production", d: "Training and deployment paths that survive real traffic — not notebook demos." },
@@ -94,16 +94,16 @@ export default function Hero() {
                     d: "Fluent in orchestrating agents, pipelining work across steps, and standing up new agents with clear contracts, guardrails, and handoffs — not one-off prompts.",
                   },
                 ].map((item) => (
-                  <li key={item.k} className="flex gap-4">
+                  <li key={item.k} className="flex gap-5">
                     <span className="font-mono-label shrink-0 text-sm text-[var(--accent)]">{item.k}</span>
                     <div>
                       <p className="font-semibold text-[var(--text)]">{item.t}</p>
-                      <p className="mt-1.5 text-sm leading-loose text-[var(--text-muted)]">{item.d}</p>
+                      <p className="mt-2 text-sm leading-loose text-[var(--text-muted)]">{item.d}</p>
                     </div>
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 flex flex-wrap gap-6 border-t border-[var(--border-subtle)] pt-8">
+              <div className="mt-10 flex flex-wrap gap-8 border-t border-[var(--border-subtle)] pt-9">
                 {[
                   { v: "20+", l: "Shipped projects" },
                   { v: "AWS", l: "Primary cloud" },
@@ -119,7 +119,7 @@ export default function Hero() {
           </aside>
         </div>
 
-        <div className="mt-20 flex flex-col items-center gap-2 text-[var(--text-muted)] md:mt-24">
+        <div className="mt-24 flex flex-col items-center gap-3 text-[var(--text-muted)] md:mt-28">
           <span className="font-mono-label text-[10px] uppercase tracking-[0.4em]">Scroll</span>
           <svg className="h-4 w-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

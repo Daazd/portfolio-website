@@ -39,7 +39,7 @@ export default function Navbar() {
             Taylor Allen
           </a>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-10 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}

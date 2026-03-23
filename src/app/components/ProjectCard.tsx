@@ -55,17 +55,17 @@ export default function ProjectCard({
           </div>
         )}
 
-        <div className="flex flex-1 flex-col p-6 md:p-7">
+        <div className="flex flex-1 flex-col p-7 md:p-8">
           {highlight && (
-            <p className="font-mono-label mb-3 text-[11px] uppercase tracking-[0.2em] text-[var(--accent-2)]">
+            <p className="font-mono-label mb-4 text-[11px] uppercase tracking-[0.2em] text-[var(--accent-2)]">
               {highlight}
             </p>
           )}
-          <h3 className="mb-2 text-xl font-bold text-[var(--text)] transition group-hover:text-[var(--accent)]">
+          <h3 className="mb-3 text-xl font-bold text-[var(--text)] transition group-hover:text-[var(--accent)]">
             {name}
           </h3>
-          <p className="mb-5 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">{description}</p>
-          <div className="mb-5 flex flex-wrap gap-2">
+          <p className="mb-6 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">{description}</p>
+          <div className="mb-6 flex flex-wrap gap-2.5">
             {techTags.map((tag) => (
               <span
                 key={tag}
@@ -93,13 +93,13 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`group flex flex-col rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5 transition hover:border-[var(--accent-2)]/30 hover:shadow-lg hover:shadow-[var(--accent-2)]/5 ${root}`}
+      className={`group flex flex-col rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 transition hover:border-[var(--accent-2)]/30 hover:shadow-lg hover:shadow-[var(--accent-2)]/5 ${root}`}
     >
-      <h3 className="mb-2 truncate text-base font-bold text-[var(--text)] group-hover:text-[var(--accent-2)]">
+      <h3 className="mb-3 truncate text-base font-bold text-[var(--text)] group-hover:text-[var(--accent-2)]">
         {name}
       </h3>
-      <p className="mb-3 line-clamp-2 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">{description}</p>
-      <div className="mb-4 flex flex-wrap gap-1.5">
+      <p className="mb-4 line-clamp-2 flex-1 text-sm leading-relaxed text-[var(--text-muted)]">{description}</p>
+      <div className="mb-5 flex flex-wrap gap-2">
         {techTags.slice(0, 4).map((tag) => (
           <span
             key={tag}

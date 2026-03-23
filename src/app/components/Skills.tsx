@@ -31,7 +31,6 @@ const skillCategories = [
       "GitHub Actions",
       "Grafana",
     ],
-    proficient: ["Athena"],
   },
   {
     title: "ML / Data",
@@ -70,33 +69,31 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[var(--bg-deep)] py-24 md:py-28">
+    <section id="skills" className="bg-[var(--bg-deep)] py-28 md:py-32">
       <div className="section-container">
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-20 max-w-3xl">
           <p className="font-mono-label mb-3 text-[11px] uppercase tracking-[0.35em] text-[var(--accent-2)]">
             Capabilities
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-[var(--text)]">
             <span className="gradient-text">Stack &amp; tooling</span>
           </h2>
-          <p className="mt-4 text-lg text-[var(--text-muted)]">
+          <p className="mt-5 text-lg leading-relaxed text-[var(--text-muted)]">
             What I reach for when the goal is reliability, clarity, and speed in production — not
             resume keyword stuffing.
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
           {skillCategories.map((category, i) => {
-            const proficientSet = new Set(
-              "proficient" in category ? (category.proficient as string[]) : []
-            );
+            const isDense = category.skills.length > 10;
             return (
               <div
                 key={category.title}
-                className="group rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 transition hover:border-[var(--accent-2)]/35 hover:shadow-[0_0_0_1px_rgba(139,124,247,0.12)] md:p-7"
+                className="group rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-7 transition hover:border-[var(--accent-2)]/35 hover:shadow-[0_0_0_1px_rgba(139,124,247,0.12)] md:p-8"
                 style={{ animationDelay: `${i * 40}ms` }}
               >
-                <div className="mb-5 flex items-baseline justify-between gap-3">
+                <div className="mb-6 flex items-baseline justify-between gap-3">
                   <h3 className="text-lg font-semibold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
                     {category.title}
                   </h3>
@@ -104,20 +101,17 @@ export default function Skills() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                {proficientSet.size > 0 && (
-                  <p className="mb-4 font-mono-label text-[10px] uppercase tracking-wider text-[var(--accent-2)]">
-                    Highly proficient: {Array.from(proficientSet).join(", ")}
-                  </p>
-                )}
-                <div className="flex flex-wrap gap-2">
+                <div
+                  className={
+                    isDense
+                      ? "grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-3"
+                      : "flex flex-wrap gap-3"
+                  }
+                >
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className={`rounded-lg border px-3 py-1.5 text-sm transition group-hover:border-[var(--border-subtle)] hover:text-[var(--text)] ${
-                        proficientSet.has(skill)
-                          ? "border-[var(--accent-2)]/40 bg-[var(--accent-2)]/10 text-[var(--accent-2)] hover:border-[var(--accent-2)]/60"
-                          : "border-[var(--border-subtle)] bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:border-[var(--accent)]/30"
-                      }`}
+                      className="rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-3.5 py-2 text-sm text-[var(--text-muted)] transition group-hover:border-[var(--accent)]/30 hover:text-[var(--text)]"
                     >
                       {skill}
                     </span>

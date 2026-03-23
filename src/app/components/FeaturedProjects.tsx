@@ -87,17 +87,17 @@ const featuredProjects = [
 
 export default function FeaturedProjects() {
   return (
-    <section id="featured" className="bg-[var(--bg-surface)] py-24 md:py-28">
+    <section id="featured" className="bg-[var(--bg-surface)] py-28 md:py-32">
       <div className="section-container">
-        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
+        <div className="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
             <p className="font-mono-label mb-3 text-[11px] uppercase tracking-[0.35em] text-[var(--accent)]">
               Case-shaped work
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-[var(--text)]">
               <span className="gradient-text">Featured projects</span>
             </h2>
-            <p className="mt-4 text-lg text-[var(--text-muted)]">
+            <p className="mt-5 text-lg leading-relaxed text-[var(--text-muted)]">
               Depth over volume: cloud systems, ML pipelines, and full-stack products — each chosen
               to show a different axis of how I build.
             </p>
@@ -107,7 +107,7 @@ export default function FeaturedProjects() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:grid-rows-[auto_auto_auto]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:grid-rows-[auto_auto_auto] lg:gap-8">
           {featuredProjects.map((project) => (
             <div key={project.name} className={`min-h-0 ${project.gridClass}`}>
               <ProjectCard

@@ -47,25 +47,26 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* Full-site container: wider on large screens, balanced padding */
 .section-container {
-  max-width: 80rem;
+  max-width: min(96rem, calc(100vw - 2.5rem));
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 640px) {
   .section-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
